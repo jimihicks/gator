@@ -1,12 +1,15 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/xml"
 	"html"
 	"io"
 	"net/http"
 	"time"
+
+	"golang.org/x/net/html/charset"
 )
 
 type RSSFeed struct {
@@ -45,7 +48,9 @@ func fetchFeed(ctx context.Context, feedURL string) (*RSSFeed, error) {
 		return nil, err
 	}
 	var rssFeed RSSFeed
-	err = xml.Unmarshal(dat, &rssFeed)
+	decoder := xml.NewDecoder(bytes.NewReader(dat))
+	decoder.CharsetReader = charset.NewReaderLabel
+	err = decoder.Decode(&rssFeed)
 	if err != nil {
 		return nil, err
 	}
