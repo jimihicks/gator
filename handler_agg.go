@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/JimiHicks/blog-aggregator-/internal/database"
+	"github.com/JimiHicks/gator/internal/database"
 	"github.com/google/uuid"
 )
 

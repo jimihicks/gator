@@ -1,4 +1,4 @@
-module github.com/JimiHicks/blog-aggregator-
+module github.com/JimiHicks/gator
 
 go 1.22.6
 
