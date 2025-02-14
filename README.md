@@ -33,11 +33,12 @@ psql --version
 ```
 
 start the postgres server in the background.
-
-mac: ```sh
+mac: 
+```sh
 brew services start postgresql@15
 ```
-linux: ```sh
+linux: 
+```sh
 sudo service postgresql start
 ```
 
